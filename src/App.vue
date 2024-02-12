@@ -14,17 +14,23 @@ export default {
 		}
 	},
 	mounted() {
-		this.doThings();
+		this.getEventList();
 
-		// axios.get("indirizzo").then(risultato => {
-		// 	console.log(risultato);
-		// }).catch(errore => {
-		// 	console.error(errore);
-		// });
+		
 	},
 	methods: {
-		doThings() {
-			console.log("App.vue does things");
+		getEventList() {
+			axios.get(this.store.apiUrl + this.store.apiEventEndPoint).then(risultato => {
+
+			if(risultato.status === 200 && risultato.data.success){
+				console.log(risultato.data.results);
+				this.store.eventList = risultato.data.results;
+			} else{
+				console.error("ooooops there is a little problem");
+			}
+			}).catch(errore => {
+			console.error(errore);
+			});
 		}
 	}
 }
@@ -34,10 +40,8 @@ export default {
 	<main>
 		<AppComponent />
 
-		<button class="btn btn-primary">
-			<font-awesome-icon icon="fa-solid fa-home" class="me-1" />
-			<span>Primary button</span>
-		</button>
+		
+			
 	</main>
 </template>
 

@@ -23,8 +23,30 @@ export default {
 
 <template>
     <div>
-        <h1>Sono un componente!</h1>
+        <h1 class="text-center">Events's List</h1>
     </div>
+
+    <div class=" d-flex justify-content-around">
+				<div v-for=" evento in store.eventList" class="card" style="width: 18rem;">
+					
+					<div class="card-body">
+						<h5 class="card-title text-center">{{ evento.name }}</h5>
+						<span class="card-text ">{{ evento.description }}</span>
+						<div class="d-flex justify-content-between  align-items-end pt-4">
+							<p>{{ evento.location }}</p>
+							<p>{{ evento.date }}</p>
+						</div>
+					</div>
+				</div>
+	</div>
+
+		<div class="text-center my-3">
+			<button class="btn btn-primary ">
+				<font-awesome-icon icon="fa-solid fa-home" class="me-1" />
+				<span>Home Button</span>
+			</button>
+		</div>
+    
 </template>
 
 <style scoped lang="scss">
