@@ -3,7 +3,7 @@ import { store } from "../store.js" //state management
 import register from "../debug" //per debuggare il componente da console
 
 export default {
-    name: "AppComponent",
+    name: "AppEventlist",
     data() {
         return {
             store
@@ -23,7 +23,7 @@ export default {
 
 <template>
     <div>
-        <h1 class="text-center">Events's List</h1>
+        <h1 class="text-center mb-5">Events's List</h1>
     </div>
 
     <div class=" d-flex justify-content-around">
@@ -40,7 +40,7 @@ export default {
 				</div>
 	</div>
 
-		<div class="text-center my-3">
+		<div class="text-center mt-5">
 			<button class="btn btn-primary ">
 				<font-awesome-icon icon="fa-solid fa-home" class="me-1" />
 				<span>Home Button</span>
