@@ -3,7 +3,7 @@ import { store } from "../store.js" //state management
 import axios from 'axios'; //importo Axios
 
 export default {
-    name: "EventDetails",
+    name: "EventDetail",
     props: ["id"],
     data() {
         return {
@@ -35,8 +35,8 @@ export default {
 
             axios.get(url).then(risultato => {
                 if (risultato.status === 200 && risultato.data.success) {
-                    console.log(risultato.data.results);
-                    this.evento = risultato.data.results;
+                    console.log(risultato.data.payload);
+                    this.evento = risultato.data.payload;
                 } else { //se il server risponde, ma con esito negativo
                     //ToDo: distinguere il motivo dell'else.
                     //es. controllare statusCode, presenza e veridicità di data.success
@@ -61,12 +61,18 @@ export default {
                 <template v-else>
                     <div v-if="!evento">Loading data</div>
                     <div class="card h-100" v-else>
-                        <div class="card-header">{{ evento?.date }}</div>
-                        <div class="card-body">
-                            <h5 class="card-title">{{ evento?.name }}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">
+                        
+                        <h5 class="card-title bg-black  text-light text-center">{{ evento?.name }}</h5>
+                        <div class="card-body text-center">
+                            <div>{{ evento?.description }}</div>
+                            <div class="d-flex justify-content-center">
+                                <span class="mx-3">{{ evento?.location }}</span>
+                                <span>{{ evento?.date }}</span>
+                            </div>
+
+                            <!-- <h6 class="card-subtitle mb-2 text-muted">
                                 {{ evento?.user ? evento?.user.name : "Unknown user" }}
-                            </h6>
+                            </h6> -->
                         </div>
 
                     </div>

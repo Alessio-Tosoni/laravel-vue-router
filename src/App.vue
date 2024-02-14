@@ -39,7 +39,7 @@ export default {
 
 				if (risultato.status === 200 && risultato.data.success) {
 					console.log(risultato.data.results);
-					this.store.eventList = risultato.data.results;
+					this.store.eventList = risultato.data.payload;
 				} else {
 					console.error("ooooops there is a little problem");
 				}
