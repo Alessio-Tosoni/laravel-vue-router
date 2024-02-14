@@ -9,10 +9,13 @@ export default {
             store
         }
     },
-    
+    methods: {
+        backToHome() {
+            this.$router.push({ name: 'home' })
+        }
+    },
     mounted() {
-        register(this); //per debuggare il componente da console
-        this.doThings();
+       
     }
 }
 </script>
@@ -23,20 +26,22 @@ export default {
     </div>
 
     <div class=" d-flex justify-content-around">
-				<div v-for=" evento in store.eventList" class="card" style="width: 18rem;">
+		<div v-for=" evento in store.eventList" class="card" style="width: 18rem;">
 					
-					<div class="card-body">
-						<h5 class="card-title text-center">{{ evento.name }}</h5>
-						<span class="card-text ">{{ evento.description }}</span>
-						<div class="d-flex justify-content-between  align-items-end pt-4">
-							<p>{{ evento.location }}</p>
-							<p>{{ evento.date }}</p>
-						</div>
-					</div>
+			<div class="card-body">
+				<h5 class="card-title text-center">{{ evento.name }}</h5>
+				<span class="card-text ">{{ evento.description }}</span>
+				<div class="d-flex justify-content-between  align-items-end pt-4">
+					<p>{{ evento.location }}</p>
+					<p>{{ evento.date }}</p>
 				</div>
-                
-	</div>
-
+			</div>
+		</div>
+    </div>
+            <div class=" text-center mt-5">
+                <a class="btn btn-primary px-5 " @click="backToHome">Home Button</a>
+            </div>
+            
 		
 			
 		
