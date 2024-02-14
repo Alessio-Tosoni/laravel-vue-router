@@ -1,13 +1,20 @@
 <script>
 export default {
-    name: "AppAbout"
+    name: "AppAbout",
+
+    methods: {
+        backToHome() {
+            this.$router.push({ name: 'home' })
+        }
+    },
 }
+
 </script>
 
 <template>
     <div class="container">
         <div class="row">
-            <h1 class="mb-3">About Us</h1>
+            <h1 class="mb-3 text-center">About Us</h1>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero, asperiores incidunt blanditiis perspiciatis
                 aliquid corporis architecto pariatur doloribus laudantium saepe reprehenderit mollitia fugit reiciendis
                 dicta
@@ -45,6 +52,9 @@ export default {
                 ullam
                 aperiam quam.
             </p>
+            <div class="text-center">
+                <a class="btn btn-primary " @click="backToHome">Home Button</a>
+            </div>
         </div>
     </div>
 </template>

@@ -6,7 +6,9 @@ import AppEventlist from "../components/AppEventlist.vue"
     components:{
         AppEventlist
     },
-    name: "AppAbout"
+    name: "Eventlist",
+
+
  }
 </script>
 
@@ -15,7 +17,9 @@ import AppEventlist from "../components/AppEventlist.vue"
         <section>
             <AppEventlist />
         </section>
+        
     </main>
+    
 </template>
 
 <style scoped></style>

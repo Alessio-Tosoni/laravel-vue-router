@@ -9,11 +9,7 @@ export default {
             store
         }
     },
-    methods: {
-        doThings() {
-            console.log("AppComponent does things");
-        }
-    },
+    
     mounted() {
         register(this); //per debuggare il componente da console
         this.doThings();
@@ -38,14 +34,12 @@ export default {
 						</div>
 					</div>
 				</div>
+                
 	</div>
 
-		<div class="text-center mt-5">
-			<button class="btn btn-primary ">
-				<font-awesome-icon icon="fa-solid fa-home" class="me-1" />
-				<span>Home Button</span>
-			</button>
-		</div>
+		
+			
+		
     
 </template>
 
